@@ -96,5 +96,25 @@ namespace ElevenNote.WebMVC.Controllers
             ModelState.AddModelError("", "Failed to update note!");
             return View();
         }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateNoteService();
+            var model = svc.GetNoteById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateNoteService();
+            service.DeleteNote(id);
+            TempData["SaveResult"] = "Note deleted!";
+            return RedirectToAction("Index");
+        }
     }
 }
