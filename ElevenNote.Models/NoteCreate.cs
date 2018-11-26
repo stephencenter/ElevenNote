@@ -5,8 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ElevenNote.Models {
-    public class NoteCreate {
+namespace ElevenNote.Models
+{
+    public class NoteCreate
+    {
         [Required]
         [MinLength(2, ErrorMessage ="Title must be at least 2 characters long")]
         [MaxLength(100, ErrorMessage ="Title cannot be longer than 100 characters")]

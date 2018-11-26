@@ -5,13 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ElevenNote.Data {
-    public class Note {
+namespace ElevenNote.Data
+{
+    public class Note
+    {
         [Key]
-        public int NoteID { get; set; }
+        public int NoteId { get; set; }
 
         [Required]
-        public Guid OwnerID { get; set; }
+        public Guid OwnerId { get; set; }
 
         [Required]
         public string Title { get; set; }
@@ -20,8 +22,8 @@ namespace ElevenNote.Data {
         public string Content { get; set; }
 
         [Required]
-        public DateTimeOffset CreatedUTC { get; set; }
+        public DateTimeOffset CreatedUtc { get; set; }
 
-        public DateTimeOffset? ModifiedUTC { get; set; }
+        public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }
