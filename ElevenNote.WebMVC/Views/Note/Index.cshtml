@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<ElevenNote.Models.NoteListItem>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "ElevenNote";
 }
 
-<h2>Index</h2>
+<h2>ElevenNote Note Manager</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create a new note", "Create")
 </p>
 
 @if (TempData.ContainsKey("SaveResult"))
@@ -23,9 +23,6 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.NoteId)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Title)
         </th>
         <th>
@@ -38,18 +35,15 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.NoteId)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CreatedUtc)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "Edit", new { id = item.NoteId }) /
+                @Html.ActionLink("Details", "Details", new { id = item.NoteId }) /
+                @Html.ActionLink("Delete", "Delete", new { id = item.NoteId })
             </td>
         </tr>
     }

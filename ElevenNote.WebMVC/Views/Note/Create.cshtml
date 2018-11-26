@@ -1,10 +1,10 @@
 ﻿@model ElevenNote.Models.NoteCreate
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "ElevenNote / Create";
 }
 
-<h2>Create</h2>
+<h2>Create a new note</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>NoteCreate</h4>
+        <h4>Enter the details for your new note</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
