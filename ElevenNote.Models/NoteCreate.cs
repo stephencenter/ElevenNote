@@ -6,12 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ElevenNote.Models {
-    public class NoteListItem {
-        public int NoteID { get; set; }
+    public class NoteCreate {
+        [Required]
+        [MinLength(2, ErrorMessage ="Title must be at least 2 characters long")]
+        [MaxLength(100, ErrorMessage ="Title cannot be longer than 100 characters")]
         public string Title { get; set; }
 
-        [Display(Name="Created")]
-        public DateTimeOffset CreatedUTC { get; set; }
+        [MaxLength(8000)]
+        public string Content { get; set; }
 
         public override string ToString() => Title;
     }
