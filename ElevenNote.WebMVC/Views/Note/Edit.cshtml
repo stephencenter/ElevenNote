@@ -1,20 +1,24 @@
-﻿@model ElevenNote.Models.NoteCreate
+﻿@model ElevenNote.Models.NoteEdit
 
 @{
-    ViewBag.Title = "ElevenNote / Create";
+    ViewBag.Title = "Edit";
 }
 
-<h2>Create a new note</h2>
+<h2>Editing a note</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>Enter the details for your new note</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<div class="form-horizontal">
+    <h4>Enter in the new details for this note</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.NoteId)
+
+    <div class="form-group">
+
         <div class="form-group">
             @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -33,10 +37,11 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
     </div>
+</div>
 }
 
 <div>

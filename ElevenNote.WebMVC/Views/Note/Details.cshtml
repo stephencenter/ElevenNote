@@ -7,7 +7,7 @@
 <h2>Note Details</h2>
 
 <div>
-    <h4>NoteDetail</h4>
+    <h4>Here are the details for this note</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -23,7 +23,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Content)
+            @Html.TextAreaFor(model => model.Content, new { @readonly = "readonly" })
         </dd>
 
         <dt>
